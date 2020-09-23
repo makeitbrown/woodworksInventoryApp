@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArchivedJob" rowHeight="115" id="3p2-Zr-zan">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArchivedJob" rowHeight="115" id="3p2-Zr-zan" customClass="ArchivedTVCell" customModule="WoodworksArchives" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3p2-Zr-zan" id="4Ih-og-Uto" customClass="ArchivedTVCell" customModule="WoodworksArchives" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3p2-Zr-zan" id="4Ih-og-Uto">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -76,13 +76,13 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="vp2-FG-Bmr" secondAttribute="trailing" id="bjF-Cg-5Ho"/>
                                         <constraint firstItem="8Em-Mt-qZS" firstAttribute="leading" secondItem="0Ga-xA-FlB" secondAttribute="trailing" constant="20" id="ro7-L7-Xvi"/>
                                     </constraints>
-                                    <connections>
-                                        <outlet property="archClientNameLabel" destination="YWm-xQ-x8g" id="UcK-gJ-JcR"/>
-                                        <outlet property="archColorsLabel" destination="0Ga-xA-FlB" id="vX2-kf-Xk5"/>
-                                        <outlet property="archInstalledDateLabel" destination="8Em-Mt-qZS" id="B53-tT-L6i"/>
-                                        <outlet property="archWoodSpeciesLabel" destination="Bdc-Rz-8Q6" id="LWq-PY-RNm"/>
-                                    </connections>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="archClientNameLabel" destination="YWm-xQ-x8g" id="wX6-2J-0zB"/>
+                                    <outlet property="archColorsLabel" destination="0Ga-xA-FlB" id="6ct-Mu-OVZ"/>
+                                    <outlet property="archInstalledDateLabel" destination="8Em-Mt-qZS" id="peO-1s-ogk"/>
+                                    <outlet property="archWoodSpeciesLabel" destination="Bdc-Rz-8Q6" id="tW1-BQ-WNf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -565,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2198.5507246376815" y="-68.303571428571431"/>
+            <point key="canvasLocation" x="1733" y="-81"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RJN-z2-cD1">

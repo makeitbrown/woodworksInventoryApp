@@ -10,14 +10,14 @@ import UIKit
 class ArchivedTVCell: UITableViewCell {
     
     @IBOutlet weak var archClientNameLabel: UILabel!
-    @IBOutlet weak var archColorsLabel: UILabel!
+    @IBOutlet weak var archBuiltProductLabel: UILabel!
     @IBOutlet weak var archWoodSpeciesLabel: UILabel!
     @IBOutlet weak var archInstalledDateLabel: UILabel!
     
     
     func setArchievedCell(archivedJob: ArchivedJob) {
         archClientNameLabel.text = archivedJob.clientName
-        archColorsLabel.text = archivedJob.finishColorNameAndCode
+        archBuiltProductLabel.text = archivedJob.builtProduct
         archWoodSpeciesLabel.text = archivedJob.woodSpecies
         archInstalledDateLabel.text = archivedJob.installedDate
     }

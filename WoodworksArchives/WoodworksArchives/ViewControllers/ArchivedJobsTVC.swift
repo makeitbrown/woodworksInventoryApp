@@ -40,6 +40,7 @@ class ArchivedJobsTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArchivedJob") as! ArchivedTVCell
         
         cell.setArchievedCell(archivedJob: archivedJob)
+        
         return cell
     }
 

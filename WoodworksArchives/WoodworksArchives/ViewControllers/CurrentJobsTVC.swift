@@ -43,9 +43,11 @@ class CurrentJobsTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "currentJob", for: indexPath)
         
         let currentJob = currentJobs[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "currentJob", for: indexPath) as! CurrentJobCell
+        
+        cell.setCurrentJobCell(currentJob: currentJob)
         
         return cell
     }

@@ -7,23 +7,36 @@
 
 import Foundation
 
-struct CurrentJob {
+struct Job {
     var clientName: String
     var builtProduct: String
     var finishColorNameAndCode: String
     var finishGallonUsage: Int
     var woodSpecies: String
-    var installedSwitch: Bool
+    var installedDate: Date?
+    
+    static func pastInstalledDate(month: Int, day: Int, year: Int) -> Date? {
+        var dateComponents = DateComponents()
+        
+        dateComponents.month = month
+        dateComponents.day = day
+        dateComponents.year = year
+        
+        let userCalendar = Calendar.current
+        let pastInstallDate = userCalendar.date(from: dateComponents)
+        
+        return pastInstallDate
+    }
 }
 
-struct ArchivedJob {
-    var clientName: String
-    var builtProduct: String
-    var finishColorNameAndCode: String
-    var finishGallonUsage: Int
-    var woodSpecies: String
-    var installedDate: String
-}
+//struct ArchivedJob {
+//    var clientName: String
+//    var builtProduct: String
+//    var finishColorNameAndCode: String
+//    var finishGallonUsage: Int
+//    var woodSpecies: String
+//    var installedDate: String
+//}
 
 struct SupplyOrder {
     var productName: String

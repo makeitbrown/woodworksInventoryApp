@@ -23,6 +23,7 @@
 		4A8827AF24FD96F1009B1D70 /* CurrentJobsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8827AE24FD96F1009B1D70 /* CurrentJobsTVC.swift */; };
 		4A8827B124FD9714009B1D70 /* OrderSupplyListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8827B024FD9714009B1D70 /* OrderSupplyListTVC.swift */; };
 		4A8827B324FD9730009B1D70 /* DailyToDoListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8827B224FD9730009B1D70 /* DailyToDoListTVC.swift */; };
+		4A97AFB02552726B00A9F549 /* OrderSupplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A97AFAF2552726B00A9F549 /* OrderSupplyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		4A8827AE24FD96F1009B1D70 /* CurrentJobsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentJobsTVC.swift; sourceTree = "<group>"; };
 		4A8827B024FD9714009B1D70 /* OrderSupplyListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSupplyListTVC.swift; sourceTree = "<group>"; };
 		4A8827B224FD9730009B1D70 /* DailyToDoListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyToDoListTVC.swift; sourceTree = "<group>"; };
+		4A97AFAF2552726B00A9F549 /* OrderSupplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSupplyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				4A79E1B5251B054F0055F855 /* ArchivedTVCell.swift */,
 				4A0131C1251CF03300BF39A8 /* CurrentJobCell.swift */,
+				4A97AFAF2552726B00A9F549 /* OrderSupplyCell.swift */,
 			);
 			path = TVCells;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8827AF24FD96F1009B1D70 /* CurrentJobsTVC.swift in Sources */,
+				4A97AFB02552726B00A9F549 /* OrderSupplyCell.swift in Sources */,
 				4A79E1B6251B054F0055F855 /* ArchivedTVCell.swift in Sources */,
 				4A8827A824FD87ED009B1D70 /* JobDataSources.swift in Sources */,
 				4A8827B324FD9730009B1D70 /* DailyToDoListTVC.swift in Sources */,

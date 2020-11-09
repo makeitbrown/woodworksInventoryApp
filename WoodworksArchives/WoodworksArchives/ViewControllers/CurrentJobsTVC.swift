@@ -9,17 +9,8 @@ import UIKit
 
 class CurrentJobsTVC: UITableViewController {
     
-//    MARK:- OUTLETS AND ACTIONS
-//    Outlets
-    
-    //    Actions
-   
-
 //    MARK:- VARIABLES AND CONSTANTS
-    
-    var currentJobs: [CurrentJob] {
-        return CurrentJobs
-    }
+    var currentJobs: [Job] = [Job]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +20,12 @@ class CurrentJobsTVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        currentJobs = listOfJobs.filter{$0.installedDate == nil}
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source

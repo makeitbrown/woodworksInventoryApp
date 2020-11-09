@@ -12,22 +12,23 @@ class ArchivedJobsTVC: UITableViewController {
     //    MARK:- OUTLETS AND ACTIONS
     //    Outlets
     
+//    MARK:- Constants and Variables
+    var archivedJobs: [Job] = [Job]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        archivedJobs = listOfJobs.filter{$0.installedDate != nil}
+        tableView.reloadData()
+    }
     // MARK: - Table view data source
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return ArchivedJobs.count
+        return archivedJobs.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -36,58 +37,40 @@ class ArchivedJobsTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let archivedJob = ArchivedJobs[indexPath.row]
+        let archivedJob = archivedJobs[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArchivedJob") as! ArchivedTVCell
         
         cell.setArchievedCell(archivedJob: archivedJob)
         
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+//  MARK:- Segue Stuff
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard segue.identifier == "ArchToDetail" else { return }
+        guard let navController = segue.destination as? UINavigationController, let detailVC = navController.topViewController as? JobDetailVC else { return }
+        
+        let indexPath = tableView.indexPathForSelectedRow!
+        let job = archivedJobs[indexPath.row]
+        detailVC.job = job
     }
-    */
+    
+    @IBAction func unwindToArchived(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        
+        guard unwindSegue.identifier == "DetailtoArchUnwind" else { return }
+        guard let detailVC = unwindSegue.source as? JobDetailVC,
+              let job = detailVC.job else { return }
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            archivedJobs[indexPath.row] = job
+            tableView.reloadData()
+        } else {
+            archivedJobs.append(job)
+            
+            let indexPath = IndexPath(row: archivedJobs.count - 1, section: 0)
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+    }
 
 }

@@ -19,10 +19,10 @@ class CurrentJobCell: UITableViewCell {
     @IBAction func currentInstallSwitchDate(_ sender: UISwitch) {
     }
     
-    func setCurrentJobCell(currentJob: CurrentJob) {
+    func setCurrentJobCell(currentJob: Job) {
         currentClientName.text = currentJob.clientName
         currentBuiltProductLabel.text = currentJob.builtProduct
         currentWoodSpecies.text = currentJob.woodSpecies
-        currentInstalledSwitch.isOn = currentJob.installedSwitch
+//        currentInstalledSwitch.isOn = currentJob.installedDate
     }
 }

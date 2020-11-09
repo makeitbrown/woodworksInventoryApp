@@ -15,11 +15,19 @@ class ArchivedTVCell: UITableViewCell {
     @IBOutlet weak var archInstalledDateLabel: UILabel!
     
     
-    func setArchievedCell(archivedJob: ArchivedJob) {
+    func setArchievedCell(archivedJob: Job) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        
         archClientNameLabel.text = archivedJob.clientName
         archBuiltProductLabel.text = archivedJob.builtProduct
         archWoodSpeciesLabel.text = archivedJob.woodSpecies
-        archInstalledDateLabel.text = archivedJob.installedDate
+        if let installedDate = archivedJob.installedDate {
+            archInstalledDateLabel.text = formatter.string(from: installedDate)
+        } else {
+            archInstalledDateLabel.text = ""
+        }
     }
     
     

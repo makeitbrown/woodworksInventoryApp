@@ -10,53 +10,39 @@ import UIKit
 class OrderSupplyListTVC: UITableViewController {
     
     //    MARK:- OUTLETS AND ACTIONS
-    //    Outlets
-        
+
     //    Actions
         
-    //    ORDERED
-        @IBOutlet weak var orderedLabel: UILabel!
-    @IBOutlet weak var orderSwitchOutlet: UISwitch!
-    @IBAction func orderedSwitchIsOn(_ sender: UISwitch) {
-        }
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         
-    //    RECEIVED
-        @IBOutlet weak var receivedLabel: UILabel!
-    @IBOutlet weak var receivedSwitchOutlet: UISwitch!
-    @IBAction func receivedSwitchIsOn(_ sender: UISwitch) {
-        }
-
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return listOfSupplies.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let supplyNeeded = listOfSupplies[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SupplyOrder", for: indexPath) as! OrderSupplyCell
 
-        // Configure the cell...
+        cell.setOrderSupplyCell(supplyNeeded: supplyNeeded)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

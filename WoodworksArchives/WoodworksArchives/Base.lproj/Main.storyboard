@@ -203,7 +203,11 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Supply Order List" id="Jkp-hj-OTj">
-                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="8kf-qL-8O8"/>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="8kf-qL-8O8">
+                                        <connections>
+                                            <action selector="addButtonTapped:" destination="4EV-yP-iS6" id="gMG-j0-R7e"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -238,6 +242,9 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BfJ-go-RBk">
                                             <rect key="frame" x="343" y="40" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="orderedSwitchIsOn:" destination="WhJ-Kb-0Jb" eventType="valueChanged" id="4n0-ll-KqD"/>
+                                            </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Received" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9w6-8H-hTG">
                                             <rect key="frame" x="324" y="79" width="70" height="21"/>
@@ -247,6 +254,9 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nfh-uW-bx3">
                                             <rect key="frame" x="343" y="108" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="receivedSwitchIsOn:" destination="WhJ-Kb-0Jb" eventType="valueChanged" id="H2G-nm-9FV"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                     <constraints>
@@ -269,6 +279,15 @@
                                         <constraint firstItem="s6u-LH-5AM" firstAttribute="top" secondItem="p6r-0P-mzk" secondAttribute="topMargin" id="zdv-P1-C3F"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="orderSwitchOutlet" destination="BfJ-go-RBk" id="RG1-Ec-Mre"/>
+                                    <outlet property="orderedLabel" destination="s6u-LH-5AM" id="ffY-mv-uv3"/>
+                                    <outlet property="productCodeTextField" destination="wtU-WH-g7b" id="s0H-Pe-Rvh"/>
+                                    <outlet property="productColorTextField" destination="kwy-jk-B8P" id="0Xq-1d-v40"/>
+                                    <outlet property="productNameTextField" destination="7fp-j9-zC9" id="Qv2-to-ETf"/>
+                                    <outlet property="receivedLabel" destination="9w6-8H-hTG" id="3F9-Cf-41g"/>
+                                    <outlet property="receivedSwitchOutlet" destination="Nfh-uW-bx3" id="VCV-YF-PuR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

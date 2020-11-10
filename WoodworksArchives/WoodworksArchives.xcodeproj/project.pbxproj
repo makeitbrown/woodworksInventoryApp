@@ -24,6 +24,7 @@
 		4A8827B124FD9714009B1D70 /* OrderSupplyListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8827B024FD9714009B1D70 /* OrderSupplyListTVC.swift */; };
 		4A8827B324FD9730009B1D70 /* DailyToDoListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8827B224FD9730009B1D70 /* DailyToDoListTVC.swift */; };
 		4A97AFB02552726B00A9F549 /* OrderSupplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A97AFAF2552726B00A9F549 /* OrderSupplyCell.swift */; };
+		4AF2C78F255B1206005EBA05 /* ListOfSupplies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C78E255B1206005EBA05 /* ListOfSupplies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		4A8827B024FD9714009B1D70 /* OrderSupplyListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSupplyListTVC.swift; sourceTree = "<group>"; };
 		4A8827B224FD9730009B1D70 /* DailyToDoListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyToDoListTVC.swift; sourceTree = "<group>"; };
 		4A97AFAF2552726B00A9F549 /* OrderSupplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSupplyCell.swift; sourceTree = "<group>"; };
+		4AF2C78E255B1206005EBA05 /* ListOfSupplies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSupplies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				4A8827A724FD87ED009B1D70 /* JobDataSources.swift */,
 				4A8827A924FD88AA009B1D70 /* ListofJobs.swift */,
+				4AF2C78E255B1206005EBA05 /* ListOfSupplies.swift */,
 			);
 			path = ArchivedDataSources;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				4A88277B24FD870F009B1D70 /* JobDetailVC.swift in Sources */,
 				4A8827B124FD9714009B1D70 /* OrderSupplyListTVC.swift in Sources */,
 				4A88277724FD870F009B1D70 /* AppDelegate.swift in Sources */,
+				4AF2C78F255B1206005EBA05 /* ListOfSupplies.swift in Sources */,
 				4A88277924FD870F009B1D70 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

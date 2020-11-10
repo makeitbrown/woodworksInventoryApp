@@ -34,8 +34,8 @@ struct SupplyOrder {
     var productCode: String
     var productColor: String
     
-    var orderSwitch: Bool
-    var receivedSwitch: Bool
+    var orderSwitch = false
+    var receivedSwitch = false
 }
 
 struct DailyToDo {

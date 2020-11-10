@@ -9,10 +9,10 @@ import UIKit
 
 class JobDetailVC: UIViewController {
     
-//    MARK:- OUTLETS AND ACTIONS
+    //    MARK:- OUTLETS AND ACTIONS
     
-//                      Outlets
-//    Client Name
+    //                      Outlets
+    //    Client Name
     @IBOutlet weak var clientNameTextField: UITextField!
     //    Built Products
     @IBOutlet weak var builtProductsTextView: UITextView!
@@ -25,25 +25,19 @@ class JobDetailVC: UIViewController {
     @IBOutlet weak var installedDateTextField: UITextField!
     @IBOutlet weak var installedSwitch: UISwitch!
     
-//    Actions
-    @IBAction func backButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    //    Actions
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let clientName = clientNameTextField.text, let builtProduct = builtProductsTextView.text, let productNameAndCodes = productNameAndCodeTextView.text, let finishUsage = Int(gallonsTextField.text ?? "0"), let woodSpecies = woodSpeciesTextView.text else { return }
-
-        if job?.installedDate == nil {
-            performSegue(withIdentifier: "DetailToCurrentUnwind", sender: nil)
-
-            job = Job(clientName: clientName,
-                      builtProduct: builtProduct,
-                      finishColorNameAndCode: productNameAndCodes,
-                      finishGallonUsage: finishUsage,
-                      woodSpecies: woodSpecies,
-                      installedDate: nil)
-        } else {
+        guard let clientName = clientNameTextField.text,
+              let builtProduct = builtProductsTextView.text,
+              let productNameAndCodes = productNameAndCodeTextView.text,
+              let finishUsage = Int(gallonsTextField.text ?? "0"),
+              let woodSpecies = woodSpeciesTextView.text
+        else { return }
+        
+        if job?.installedDate != Date() {
             performSegue(withIdentifier: "DetailToArchUnwind", sender: nil)
-
+            
             job?.clientName = clientName
             job?.builtProduct = builtProduct
             job?.finishColorNameAndCode = productNameAndCodes
@@ -52,6 +46,15 @@ class JobDetailVC: UIViewController {
             if let datePicker = self.installedDateTextField.inputView as? UIDatePicker {
                 job?.installedDate = datePicker.date
             }
+        } else {
+            performSegue(withIdentifier: "DetailToCurrentUnwind", sender: nil)
+            
+            job = Job(clientName: clientName,
+                      builtProduct: builtProduct,
+                      finishColorNameAndCode: productNameAndCodes,
+                      finishGallonUsage: finishUsage,
+                      woodSpecies: woodSpecies,
+                      installedDate: nil)
         }
     }
     
@@ -65,59 +68,65 @@ class JobDetailVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-// MARK:- Functions
+    // MARK:- Functions
     
     @objc func doneButtonPressed() {
         if let  datePicker = self.installedDateTextField.inputView as? UIDatePicker {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
+            dateFormatter.dateFormat = "MM/dd/yyyy"
             self.installedDateTextField.text = dateFormatter.string(from: datePicker.date)
         }
         self.installedDateTextField.resignFirstResponder()
-     }
-    
-    func handleDatePicker(sender: UIDatePicker) {
-        var dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        installedDateTextField.text = dateFormatter.string(from: sender.date)
     }
     
     func updateUI() {
-//        let transferredJob = jobs[Job.jobIndex]
+        
+        clientNameTextField.text = job?.clientName
+        builtProductsTextView.text = job?.builtProduct
+        woodSpeciesTextView.text = job?.woodSpecies
+        productNameAndCodeTextView.text = job?.finishColorNameAndCode
+        gallonsTextField.text = String(job?.finishGallonUsage ?? 0)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        self.installedDateTextField.text = dateFormatter.string(from: job?.installedDate ?? Date())
+        
+        //        Input Border Control
         clientNameTextField.layer.borderWidth = 1
         builtProductsTextView.layer.borderWidth = 1
         woodSpeciesTextView.layer.borderWidth = 1
         productNameAndCodeTextView.layer.borderWidth = 1
         installedDateTextField.layer.borderWidth = 1
+        gallonsTextField.layer.borderWidth = 1
     }
     
-//    MARK:- Segue
-   
+    //    MARK:- Segue
+    
     
 }
 
 extension UITextField {
-
-   func addInputViewDatePicker(target: Any, selector: Selector) {
-
-    let screenWidth = UIScreen.main.bounds.width
-
-    //Add DatePicker as inputView
-    let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
-    datePicker.datePickerMode = .date
-    self.inputView = datePicker
-
-    //Add Tool Bar as input AccessoryView
-    let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
-    let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-    let cancelBarButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelPressed))
-    let doneBarButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: selector)
-    toolBar.setItems([cancelBarButton, flexibleSpace, doneBarButton], animated: false)
-
-    self.inputAccessoryView = toolBar
- }
-
-   @objc func cancelPressed() {
-     self.resignFirstResponder()
-   }
+    
+    func addInputViewDatePicker(target: Any, selector: Selector) {
+        
+        let screenWidth = UIScreen.main.bounds.width
+        
+        //Add DatePicker as inputView
+        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
+        datePicker.datePickerMode = .date
+        self.inputView = datePicker
+        
+        //Add Tool Bar as input AccessoryView
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelBarButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelPressed))
+        let doneBarButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: selector)
+        toolBar.setItems([cancelBarButton, flexibleSpace, doneBarButton], animated: false)
+        
+        self.inputAccessoryView = toolBar
+    }
+    
+    @objc func cancelPressed() {
+        self.resignFirstResponder()
+    }
 }

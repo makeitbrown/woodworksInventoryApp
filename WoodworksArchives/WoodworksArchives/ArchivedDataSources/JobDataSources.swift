@@ -29,15 +29,6 @@ struct Job {
     }
 }
 
-//struct ArchivedJob {
-//    var clientName: String
-//    var builtProduct: String
-//    var finishColorNameAndCode: String
-//    var finishGallonUsage: Int
-//    var woodSpecies: String
-//    var installedDate: String
-//}
-
 struct SupplyOrder {
     var productName: String
     var productCode: String

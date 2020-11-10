@@ -49,7 +49,9 @@ class ArchivedJobsTVC: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "ArchToDetail" else { return }
-        guard let navController = segue.destination as? UINavigationController, let detailVC = navController.topViewController as? JobDetailVC else { return }
+        guard let detailVC = segue.destination as? JobDetailVC else {
+            return
+        }
         
         let indexPath = tableView.indexPathForSelectedRow!
         let job = archivedJobs[indexPath.row]
@@ -58,7 +60,7 @@ class ArchivedJobsTVC: UITableViewController {
     
     @IBAction func unwindToArchived(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
         
-        guard unwindSegue.identifier == "DetailtoArchUnwind" else { return }
+        guard unwindSegue.identifier == "DetailToArchUnwind" else { return }
         guard let detailVC = unwindSegue.source as? JobDetailVC,
               let job = detailVC.job else { return }
         

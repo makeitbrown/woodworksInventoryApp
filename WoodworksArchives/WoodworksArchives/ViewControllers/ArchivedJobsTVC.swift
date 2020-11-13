@@ -57,22 +57,5 @@ class ArchivedJobsTVC: UITableViewController {
         let job = archivedJobs[indexPath.row]
         detailVC.job = job
     }
-    
-    @IBAction func unwindToArchived(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
-        
-        guard unwindSegue.identifier == "DetailToArchUnwind" else { return }
-        guard let detailVC = unwindSegue.source as? JobDetailVC,
-              let job = detailVC.job else { return }
-        
-        if let indexPath = tableView.indexPathForSelectedRow {
-            archivedJobs[indexPath.row] = job
-            tableView.reloadData()
-        } else {
-            archivedJobs.append(job)
-            
-            let indexPath = IndexPath(row: archivedJobs.count - 1, section: 0)
-            tableView.insertRows(at: [indexPath], with: .automatic)
-        }
-    }
 
 }

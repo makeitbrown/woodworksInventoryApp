@@ -24,8 +24,17 @@ class JobDetailVC: UIViewController {
     //    Installed
     @IBOutlet weak var installedDateTextField: UITextField!
     @IBOutlet weak var installedSwitch: UISwitch!
+    @IBOutlet weak var installedDateVStack: UIStackView!
     
     //    Actions
+    
+    @IBAction func installSwitch(_ sender: Any) {
+        if installedSwitch.isOn == true {
+            installedDateVStack.isHidden = false
+        } else {
+            installedDateVStack.isHidden = true
+        }
+    }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let clientName = clientNameTextField.text,
@@ -34,10 +43,8 @@ class JobDetailVC: UIViewController {
               let finishUsage = Int(gallonsTextField.text ?? "0"),
               let woodSpecies = woodSpeciesTextView.text
         else { return }
-        
+
         if job?.installedDate != Date() {
-            performSegue(withIdentifier: "DetailToArchUnwind", sender: nil)
-            
             job?.clientName = clientName
             job?.builtProduct = builtProduct
             job?.finishColorNameAndCode = productNameAndCodes
@@ -47,8 +54,6 @@ class JobDetailVC: UIViewController {
                 job?.installedDate = datePicker.date
             }
         } else {
-            performSegue(withIdentifier: "DetailToCurrentUnwind", sender: nil)
-            
             job = Job(clientName: clientName,
                       builtProduct: builtProduct,
                       finishColorNameAndCode: productNameAndCodes,
@@ -56,6 +61,7 @@ class JobDetailVC: UIViewController {
                       woodSpecies: woodSpecies,
                       installedDate: nil)
         }
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK:- Variables and Constants
@@ -86,6 +92,18 @@ class JobDetailVC: UIViewController {
         woodSpeciesTextView.text = job?.woodSpecies
         productNameAndCodeTextView.text = job?.finishColorNameAndCode
         gallonsTextField.text = String(job?.finishGallonUsage ?? 0)
+        
+        if job?.installedDate == nil {
+            installedSwitch.isOn = false
+        } else {
+            installedSwitch.isOn = true
+        }
+        
+        if installedSwitch.isOn == true {
+            installedDateVStack.isHidden = false
+        } else {
+            installedDateVStack.isHidden = true
+        }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"

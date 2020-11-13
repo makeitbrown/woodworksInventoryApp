@@ -61,21 +61,4 @@ class CurrentJobsTVC: UITableViewController {
         let job = currentJobs[indexPath.row]
         detailVC.job = job
     }
-
-    @IBAction func unwindToCurrent(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
-        
-        guard unwindSegue.identifier == "DetailToCurrentUnwind" else { return }
-        guard let detailVC = unwindSegue.source as? JobDetailVC,
-              let job = detailVC.job else { return }
-        
-        if let indexPath = tableView.indexPathForSelectedRow {
-            currentJobs[indexPath.row] = job
-            tableView.reloadData()
-        } else {
-            currentJobs.append(job)
-            
-            let indexPath = IndexPath(row: currentJobs.count - 1, section: 0)
-            tableView.insertRows(at: [indexPath], with: .automatic)
-        }
-    }
 }

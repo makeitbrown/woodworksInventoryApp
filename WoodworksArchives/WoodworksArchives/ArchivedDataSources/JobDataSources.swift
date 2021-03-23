@@ -42,4 +42,6 @@ struct DailyToDo {
     var jobName: String
     var worker: String
     var toDoListNotes: String
+    
+    var doneSwitch = false
 }

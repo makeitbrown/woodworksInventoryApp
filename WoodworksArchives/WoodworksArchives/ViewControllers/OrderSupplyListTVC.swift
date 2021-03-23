@@ -5,6 +5,7 @@
 //  Created by Michael Brown on 8/31/20.
 //
 
+import AuthenticationServices
 import UIKit
 
 class OrderSupplyListTVC: UITableViewController {
@@ -35,10 +36,10 @@ class OrderSupplyListTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let supplyNeeded = listOfSupplies[indexPath.row]
+        let newSupplyNeeded = listOfSupplies[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "SupplyOrder", for: indexPath) as! OrderSupplyCell
 
-        cell.setOrderSupplyCell(supplyNeeded: supplyNeeded)
+        cell.setOrderSupplyCell(supplyNeeded: newSupplyNeeded)
 
         return cell
     }

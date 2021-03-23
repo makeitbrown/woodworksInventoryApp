@@ -14,13 +14,13 @@ class OrderSupplyCell: UITableViewCell {
     @IBOutlet weak var productColorTextField: UITextField!
     
     //    ORDERED
-        @IBOutlet weak var orderedLabel: UILabel!
+    @IBOutlet weak var orderedLabel: UILabel!
     @IBOutlet weak var orderSwitchOutlet: UISwitch!
     @IBAction func orderedSwitchIsOn(_ sender: UISwitch) {
         }
         
     //    RECEIVED
-        @IBOutlet weak var receivedLabel: UILabel!
+    @IBOutlet weak var receivedLabel: UILabel!
     @IBOutlet weak var receivedSwitchOutlet: UISwitch!
     @IBAction func receivedSwitchIsOn(_ sender: UISwitch) {
         }

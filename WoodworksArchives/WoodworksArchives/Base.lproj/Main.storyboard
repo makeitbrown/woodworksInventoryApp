@@ -91,7 +91,13 @@
                             <outlet property="delegate" destination="9lH-cD-ELO" id="S1X-IF-9VG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Archived Jobs" id="Wdv-I3-HPJ"/>
+                    <navigationItem key="navigationItem" title="Archived Jobs" id="Wdv-I3-HPJ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="person.circle" catalog="system" id="ZV7-j7-TYK">
+                            <connections>
+                                <segue destination="W18-yt-1ZG" kind="presentation" id="bCy-Us-rOP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwL-Hc-cWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,6 +185,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Current Jobs" id="q3E-A2-Tr5">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="person.circle" catalog="system" id="mKj-l6-VVY">
+                            <connections>
+                                <segue destination="W18-yt-1ZG" kind="presentation" id="SCa-xZ-VqH"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Lej-Ug-YAh">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" identifier="NewToDetail" id="JSe-83-oTn"/>
@@ -203,6 +214,11 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Supply Order List" id="Jkp-hj-OTj">
+                                    <barButtonItem key="leftBarButtonItem" title="Item" image="person.circle" catalog="system" id="JUN-ve-9CM">
+                                        <connections>
+                                            <segue destination="W18-yt-1ZG" kind="presentation" identifier="SignIn" id="mI2-Ks-Moh"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="8kf-qL-8O8">
                                         <connections>
                                             <action selector="addButtonTapped:" destination="4EV-yP-iS6" id="gMG-j0-R7e"/>
@@ -295,11 +311,26 @@
                             <outlet property="delegate" destination="4EV-yP-iS6" id="qsk-Rx-jhw"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Supply Order List" image="list.bullet.indent" catalog="system" id="kKE-GB-2tG"/>
+                    <tabBarItem key="tabBarItem" title="Supply Order List" image="list.bullet.below.rectangle" catalog="system" id="kKE-GB-2tG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8aa-TE-n79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="508.69565217391306" y="1050.6696428571429"/>
+        </scene>
+        <!--Sign In With AppleVC-->
+        <scene sceneID="L27-nz-u9K">
+            <objects>
+                <viewController id="W18-yt-1ZG" customClass="SignInWithAppleVC" customModule="WoodworksArchives" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C8m-1O-01O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pnk-bM-Nlu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w53-vq-bJb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2338" y="1057"/>
         </scene>
         <!--Daily To Do List-->
         <scene sceneID="UE2-CW-d5r">
@@ -314,28 +345,30 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Daily To Do List" id="X1r-0D-mFT">
+                                    <barButtonItem key="leftBarButtonItem" title="Item" image="person.circle" catalog="system" id="x47-Vs-5jr">
+                                        <connections>
+                                            <segue destination="W18-yt-1ZG" kind="presentation" id="fGV-eA-o2y"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Au-FI-mAw"/>
                                 </navigationItem>
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyToDoList" rowHeight="175" id="p65-6C-8qX">
-                                <rect key="frame" x="0.0" y="72" width="414" height="175"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyToDoList" rowHeight="200" id="p65-6C-8qX" customClass="ToDoListCell" customModule="WoodworksArchives" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p65-6C-8qX" id="a4B-BH-EAV">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="175"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Job Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vh-pM-Lui">
-                                            <rect key="frame" x="20" y="11" width="264" height="34"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Job Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vh-pM-Lui">
+                                            <rect key="frame" x="20" y="11" width="289.5" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Worker" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eGG-k6-WIF">
-                                            <rect key="frame" x="294" y="11" width="100" height="34"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="F4a-jZ-4Zf"/>
-                                            </constraints>
+                                            <rect key="frame" x="319.5" y="11" width="74.5" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -346,28 +379,42 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BYi-3x-AZX">
-                                            <rect key="frame" x="20" y="78" width="374" height="86"/>
+                                            <rect key="frame" x="20" y="78" width="374" height="75"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <color key="textColor" systemColor="labelColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pV1-Au-mDx">
+                                            <rect key="frame" x="345" y="159" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="doneSwitchTapped:" destination="p65-6C-8qX" eventType="valueChanged" id="5RD-3u-pz8"/>
+                                            </connections>
+                                        </switch>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="0vh-pM-Lui" firstAttribute="leading" secondItem="a4B-BH-EAV" secondAttribute="leadingMargin" id="0h9-ox-HsU"/>
+                                        <constraint firstAttribute="trailing" secondItem="pV1-Au-mDx" secondAttribute="trailing" constant="20" id="31M-SB-F7N"/>
                                         <constraint firstItem="BYi-3x-AZX" firstAttribute="top" secondItem="zjX-aa-Ksr" secondAttribute="bottom" constant="4" id="8X4-Nx-N2g"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="zjX-aa-Ksr" secondAttribute="trailing" id="Em4-w1-RHW"/>
-                                        <constraint firstItem="BYi-3x-AZX" firstAttribute="bottom" secondItem="a4B-BH-EAV" secondAttribute="bottomMargin" id="I2Z-r3-bGm"/>
                                         <constraint firstItem="zjX-aa-Ksr" firstAttribute="leading" secondItem="a4B-BH-EAV" secondAttribute="leadingMargin" id="P3i-Ps-mla"/>
+                                        <constraint firstItem="BYi-3x-AZX" firstAttribute="bottom" secondItem="pV1-Au-mDx" secondAttribute="topMargin" constant="-14" id="QZg-aj-qXn"/>
                                         <constraint firstItem="eGG-k6-WIF" firstAttribute="top" secondItem="a4B-BH-EAV" secondAttribute="topMargin" id="R5s-52-bUF"/>
                                         <constraint firstItem="BYi-3x-AZX" firstAttribute="leading" secondItem="a4B-BH-EAV" secondAttribute="leadingMargin" id="ZgK-ik-rco"/>
                                         <constraint firstItem="eGG-k6-WIF" firstAttribute="leading" secondItem="0vh-pM-Lui" secondAttribute="trailing" constant="10" id="Zs7-HN-Ngc"/>
                                         <constraint firstItem="BYi-3x-AZX" firstAttribute="trailing" secondItem="a4B-BH-EAV" secondAttribute="trailingMargin" id="fDD-fB-qNO"/>
                                         <constraint firstItem="0vh-pM-Lui" firstAttribute="top" secondItem="a4B-BH-EAV" secondAttribute="topMargin" id="iMT-dk-iOv"/>
+                                        <constraint firstAttribute="bottom" secondItem="pV1-Au-mDx" secondAttribute="bottom" constant="10" id="oLV-ob-4Pf"/>
                                         <constraint firstItem="zjX-aa-Ksr" firstAttribute="top" secondItem="0vh-pM-Lui" secondAttribute="bottom" constant="8" symbolic="YES" id="vAj-GV-UAh"/>
                                         <constraint firstItem="eGG-k6-WIF" firstAttribute="trailing" secondItem="a4B-BH-EAV" secondAttribute="trailingMargin" id="vyD-7F-9ja"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="doneSwitchOutlet" destination="pV1-Au-mDx" id="M1v-Us-sn5"/>
+                                    <outlet property="jobNameTextField" destination="0vh-pM-Lui" id="KGS-H9-dzf"/>
+                                    <outlet property="notesTextView" destination="BYi-3x-AZX" id="JZ5-vG-vvi"/>
+                                    <outlet property="workerTextField" destination="eGG-k6-WIF" id="tp4-Hk-IJ0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -375,7 +422,7 @@
                             <outlet property="delegate" destination="oMp-Xf-HgP" id="Mvi-zt-9eZ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Daily To Do List" image="person.crop.circle.badge.checkmark" catalog="system" id="xQo-lG-V98"/>
+                    <tabBarItem key="tabBarItem" title="Daily To Do List" image="list.bullet" catalog="system" id="xQo-lG-V98"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xrY-zy-K9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -655,13 +702,15 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JSe-83-oTn"/>
+        <segue reference="WWi-PN-I7l"/>
+        <segue reference="bCy-Us-rOP"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="list.bullet.indent" catalog="system" width="128" height="74"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="list.bullet.below.rectangle" catalog="system" width="128" height="112"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="list.triangle" catalog="system" width="128" height="91"/>
-        <image name="person.crop.circle.badge.checkmark" catalog="system" width="128" height="113"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

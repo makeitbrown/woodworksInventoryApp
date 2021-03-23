@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A0131C2251CF03300BF39A8 /* CurrentJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0131C1251CF03300BF39A8 /* CurrentJobCell.swift */; };
+		4A4B116C259BE22D00BA980E /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B116A259BE22D00BA980E /* CoreData.xcdatamodeld */; };
 		4A79E1B6251B054F0055F855 /* ArchivedTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A79E1B5251B054F0055F855 /* ArchivedTVCell.swift */; };
 		4A88277724FD870F009B1D70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88277624FD870F009B1D70 /* AppDelegate.swift */; };
 		4A88277924FD870F009B1D70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88277824FD870F009B1D70 /* SceneDelegate.swift */; };
@@ -24,6 +25,9 @@
 		4A8827B124FD9714009B1D70 /* OrderSupplyListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8827B024FD9714009B1D70 /* OrderSupplyListTVC.swift */; };
 		4A8827B324FD9730009B1D70 /* DailyToDoListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8827B224FD9730009B1D70 /* DailyToDoListTVC.swift */; };
 		4A97AFB02552726B00A9F549 /* OrderSupplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A97AFAF2552726B00A9F549 /* OrderSupplyCell.swift */; };
+		4A9C9994260A3C5C005CB7F9 /* ToDoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9C9993260A3C5C005CB7F9 /* ToDoListCell.swift */; };
+		4A9C9999260A412A005CB7F9 /* ToDoListArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9C9998260A412A005CB7F9 /* ToDoListArray.swift */; };
+		4A9C99A5260A5B40005CB7F9 /* SignInWithAppleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9C99A4260A5B40005CB7F9 /* SignInWithAppleVC.swift */; };
 		4AF2C78F255B1206005EBA05 /* ListOfSupplies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C78E255B1206005EBA05 /* ListOfSupplies.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		4A0131C1251CF03300BF39A8 /* CurrentJobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentJobCell.swift; sourceTree = "<group>"; };
+		4A4B116B259BE22D00BA980E /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		4A79E1B5251B054F0055F855 /* ArchivedTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedTVCell.swift; sourceTree = "<group>"; };
 		4A88277324FD870F009B1D70 /* WoodworksArchives.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoodworksArchives.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A88277624FD870F009B1D70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +73,10 @@
 		4A8827B024FD9714009B1D70 /* OrderSupplyListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSupplyListTVC.swift; sourceTree = "<group>"; };
 		4A8827B224FD9730009B1D70 /* DailyToDoListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyToDoListTVC.swift; sourceTree = "<group>"; };
 		4A97AFAF2552726B00A9F549 /* OrderSupplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSupplyCell.swift; sourceTree = "<group>"; };
+		4A9C9993260A3C5C005CB7F9 /* ToDoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListCell.swift; sourceTree = "<group>"; };
+		4A9C9998260A412A005CB7F9 /* ToDoListArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListArray.swift; sourceTree = "<group>"; };
+		4A9C99A0260A593F005CB7F9 /* WoodworksArchives.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WoodworksArchives.entitlements; sourceTree = "<group>"; };
+		4A9C99A4260A5B40005CB7F9 /* SignInWithAppleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleVC.swift; sourceTree = "<group>"; };
 		4AF2C78E255B1206005EBA05 /* ListOfSupplies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSupplies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +111,7 @@
 				4A79E1B5251B054F0055F855 /* ArchivedTVCell.swift */,
 				4A0131C1251CF03300BF39A8 /* CurrentJobCell.swift */,
 				4A97AFAF2552726B00A9F549 /* OrderSupplyCell.swift */,
+				4A9C9993260A3C5C005CB7F9 /* ToDoListCell.swift */,
 			);
 			path = TVCells;
 			sourceTree = "<group>";
@@ -129,6 +139,7 @@
 		4A88277524FD870F009B1D70 /* WoodworksArchives */ = {
 			isa = PBXGroup;
 			children = (
+				4A9C99A0260A593F005CB7F9 /* WoodworksArchives.entitlements */,
 				4A8827AB24FD9668009B1D70 /* ViewControllers */,
 				4A8827A624FD8775009B1D70 /* ArchivedDataSources */,
 				4A88277624FD870F009B1D70 /* AppDelegate.swift */,
@@ -165,6 +176,8 @@
 				4A8827A724FD87ED009B1D70 /* JobDataSources.swift */,
 				4A8827A924FD88AA009B1D70 /* ListofJobs.swift */,
 				4AF2C78E255B1206005EBA05 /* ListOfSupplies.swift */,
+				4A9C9998260A412A005CB7F9 /* ToDoListArray.swift */,
+				4A4B116A259BE22D00BA980E /* CoreData.xcdatamodeld */,
 			);
 			path = ArchivedDataSources;
 			sourceTree = "<group>";
@@ -174,6 +187,7 @@
 			children = (
 				4A79E1B4251B050B0055F855 /* TVCells */,
 				4A88277A24FD870F009B1D70 /* JobDetailVC.swift */,
+				4A9C99A4260A5B40005CB7F9 /* SignInWithAppleVC.swift */,
 				4A8827AC24FD96D4009B1D70 /* ArchivedJobsTVC.swift */,
 				4A8827AE24FD96F1009B1D70 /* CurrentJobsTVC.swift */,
 				4A8827B024FD9714009B1D70 /* OrderSupplyListTVC.swift */,
@@ -318,13 +332,17 @@
 				4A8827A824FD87ED009B1D70 /* JobDataSources.swift in Sources */,
 				4A8827B324FD9730009B1D70 /* DailyToDoListTVC.swift in Sources */,
 				4A0131C2251CF03300BF39A8 /* CurrentJobCell.swift in Sources */,
+				4A4B116C259BE22D00BA980E /* CoreData.xcdatamodeld in Sources */,
 				4A8827AD24FD96D4009B1D70 /* ArchivedJobsTVC.swift in Sources */,
+				4A9C99A5260A5B40005CB7F9 /* SignInWithAppleVC.swift in Sources */,
+				4A9C9994260A3C5C005CB7F9 /* ToDoListCell.swift in Sources */,
 				4A8827AA24FD88AA009B1D70 /* ListofJobs.swift in Sources */,
 				4A88277B24FD870F009B1D70 /* JobDetailVC.swift in Sources */,
 				4A8827B124FD9714009B1D70 /* OrderSupplyListTVC.swift in Sources */,
 				4A88277724FD870F009B1D70 /* AppDelegate.swift in Sources */,
 				4AF2C78F255B1206005EBA05 /* ListOfSupplies.swift in Sources */,
 				4A88277924FD870F009B1D70 /* SceneDelegate.swift in Sources */,
+				4A9C9999260A412A005CB7F9 /* ToDoListArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WoodworksArchives/WoodworksArchives.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = US39QDHZR6;
 				INFOPLIST_FILE = WoodworksArchives/Info.plist;
@@ -519,6 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WoodworksArchives/WoodworksArchives.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = US39QDHZR6;
 				INFOPLIST_FILE = WoodworksArchives/Info.plist;
@@ -657,6 +677,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4A4B116A259BE22D00BA980E /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4A4B116B259BE22D00BA980E /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 4A4B116B259BE22D00BA980E /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4A88276B24FD870F009B1D70 /* Project object */;
 }

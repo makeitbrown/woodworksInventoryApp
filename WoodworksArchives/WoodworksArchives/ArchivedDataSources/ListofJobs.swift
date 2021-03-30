@@ -40,7 +40,3 @@ var listOfJobs: [Job] = [
     Job(clientName: "Pyne White", builtProduct: "Frame and Doors", finishColorNameAndCode: "CHEMLIFE 24 WHITE LOW GLOSS 117-2420D5PRS", finishGallonUsage: 2, woodSpecies: "Maple", installedDate: Job.pastInstalledDate(month: 03, day: 13, year: 2020))
 
 ]
-
-var SupplyOrderList = [SupplyOrder]()
-
-var DailyToDoList = [DailyToDo]()

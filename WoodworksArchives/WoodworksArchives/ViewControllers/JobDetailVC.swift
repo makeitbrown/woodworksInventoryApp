@@ -38,19 +38,31 @@ class JobDetailVC: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         
+        guard let clientName = clientNameTextField.text,
+              let builtProduct = builtProductsTextView.text,
+              let woodSpecies = woodSpeciesTextView.text,
+              let finishColor = productNameAndCodeTextView.text,
+              let gallons = gallonsTextField.text,
+              let gallonsNumber = Int(gallons)
+            
+              else { return }
+        
         if let job = job {
-            guard case let job.clientName = clientNameTextField.text,
-                  case let job.builtProduct = builtProductsTextView.text,
-                  case let job.woodSpecies = woodSpeciesTextView.text,
-                  case let job.finishColorNameAndCode = productNameAndCodeTextView.text,
-                  case let String(job.finishGallonUsage) = gallonsTextField.text else { return }
             
-            let jobIndex = JobController.sharedJobInstance.listOfJobs.index(of: job)
+            job.clientName = clientName
+            job.builtProduct = builtProduct
+            job.woodSpecies = woodSpecies
+            job.finishColorNameAndCode = finishColor
+            job.finishGallonUsage = gallonsNumber
+        
+            if let jobIndex = JobController.sharedJobInstance.listOfJobs.index(of: job) {
+                JobController.sharedJobInstance.listOfJobs.remove(at: jobIndex)
+            }
             
-            JobController.sharedJobInstance.listOfJobs.remove(at: jobIndex)
-            JobController.listOfJobs.append(job)
+            JobController.sharedJobInstance.listOfJobs.append(job)
         } else {
-            JobController.listOfJobs.append(job ?? <#default value#>)
+            let newJob = Job(clientName: clientName, builtProduct: builtProduct, finishColorNameAndCode: finishColor, finishGallonUsage: gallonsNumber, woodSpecies: woodSpecies, installedDate: nil)
+            JobController.sharedJobInstance.listOfJobs.append(newJob)
         }
         Job.saveJobsToFile()
         navigationController?.popViewController(animated: true)

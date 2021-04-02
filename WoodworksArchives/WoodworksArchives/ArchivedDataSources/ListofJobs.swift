@@ -10,7 +10,7 @@ import Foundation
 
 struct JobController {
     
-    static let sharedJobInstance = JobController()
+    static var sharedJobInstance = JobController()
     
    var listOfJobs: [Job] = [
         
@@ -45,8 +45,4 @@ struct JobController {
         Job(clientName: "Pyne White", builtProduct: "Frame and Doors", finishColorNameAndCode: "CHEMLIFE 24 WHITE LOW GLOSS 117-2420D5PRS", finishGallonUsage: 2, woodSpecies: "Maple", installedDate: Job.pastInstalledDate(month: 03, day: 13, year: 2020))
         
     ]
-    
-    static func appendToList() {
-        
-    }
 }

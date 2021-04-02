@@ -37,30 +37,22 @@ class JobDetailVC: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let clientName = clientNameTextField.text,
-              let builtProduct = builtProductsTextView.text,
-              let productNameAndCodes = productNameAndCodeTextView.text,
-              let finishUsage = Int(gallonsTextField.text ?? "0"),
-              let woodSpecies = woodSpeciesTextView.text
-        else { return }
-
-        if job?.installedDate != Date() {
-            job?.clientName = clientName
-            job?.builtProduct = builtProduct
-            job?.finishColorNameAndCode = productNameAndCodes
-            job?.finishGallonUsage = finishUsage
-            job?.woodSpecies = woodSpecies
-            if let datePicker = self.installedDateTextField.inputView as? UIDatePicker {
-                job?.installedDate = datePicker.date
-            }
+        
+        if let job = job {
+            guard case let job.clientName = clientNameTextField.text,
+                  case let job.builtProduct = builtProductsTextView.text,
+                  case let job.woodSpecies = woodSpeciesTextView.text,
+                  case let job.finishColorNameAndCode = productNameAndCodeTextView.text,
+                  case let String(job.finishGallonUsage) = gallonsTextField.text else { return }
+            
+            let jobIndex = JobController.sharedJobInstance.listOfJobs.index(of: job)
+            
+            JobController.sharedJobInstance.listOfJobs.remove(at: jobIndex)
+            JobController.listOfJobs.append(job)
         } else {
-            job = Job(clientName: clientName,
-                      builtProduct: builtProduct,
-                      finishColorNameAndCode: productNameAndCodes,
-                      finishGallonUsage: finishUsage,
-                      woodSpecies: woodSpecies,
-                      installedDate: nil)
+            JobController.listOfJobs.append(job ?? <#default value#>)
         }
+        Job.saveJobsToFile()
         navigationController?.popViewController(animated: true)
     }
     

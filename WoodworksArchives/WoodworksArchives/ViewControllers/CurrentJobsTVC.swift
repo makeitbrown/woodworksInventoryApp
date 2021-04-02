@@ -25,7 +25,7 @@ class CurrentJobsTVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        currentJobs = listOfJobs.filter{$0.installedDate == nil}
+        currentJobs = JobController.sharedJobInstance.listOfJobs.filter{$0.installedDate == nil}
         tableView.reloadData()
     }
 

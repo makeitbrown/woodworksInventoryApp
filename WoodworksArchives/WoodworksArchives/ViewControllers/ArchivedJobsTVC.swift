@@ -22,7 +22,7 @@ class ArchivedJobsTVC: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        archivedJobs = listOfJobs.filter{$0.installedDate != nil}
+        archivedJobs = JobController.sharedJobInstance.listOfJobs.filter{$0.installedDate != nil}
         tableView.reloadData()
     }
     // MARK: - Table view data source
